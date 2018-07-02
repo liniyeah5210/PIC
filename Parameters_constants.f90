@@ -7,7 +7,7 @@ MODULE Parameters_constants
     INTEGER, parameter :: N=1000 !number of electrons (super particles)
     INTEGER, parameter :: jmax=32 !number of grids
     DOUBLEPRECISION :: dx=L/(jmax-1.) !length of each grid space
-    DOUBLEPRECISION :: vb=4 !beam velocity
+    DOUBLEPRECISION :: vb=5.1 !beam velocity
     DOUBLEPRECISION :: dt=0.001 !time step
     DOUBLEPRECISION :: tmax=100.01 !simulation from 0 to tmax
     doubleprecision :: outputf=1 !output per outputf
