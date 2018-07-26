@@ -1,3 +1,5 @@
 *.o
 *.txt
 *.mod
+main
+data/

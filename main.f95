@@ -6,11 +6,11 @@ program main
   doubleprecision :: Distribution_negative,Distribution_positive,vran,rran
 
   Do i=1,N
-    If (mod(i,2)/=0) then
-        r(i)=(L-L/N)/(N-1)*((i-1)-1*dble(rand(0)))
-    else if (mod(i,2)==0) then  
-        r(i)=(L-L/N)/(N-1)*((i-1)+1*dble(rand(0)))
-    End If
+!    If (mod(i,2)/=0) then
+!        r(i)=(L-L/N)/(N-1)*((i-1)-1*dble(rand(0)))
+!    else if (mod(i,2)==0) then  
+!        r(i)=(L-L/N)/(N-1)*((i-1)+1*dble(rand(0)))
+!    End If
     
     If (mod(i,2)/=0) then
         vin(i)=vb
@@ -19,17 +19,10 @@ program main
     End If
  End Do
 
-
-go to 100
-r(1)=1
-r(2)=3
-
-vold(1)=-0.5
-vold(2)=0.5
-100 continue
-
-
-
+ Do i=1,N
+  call Distribution_density_purturb(rran)
+  r(i)=rran
+End do
 
   call Density(r,dsty)
   call Poisson1d_with_ions_init(dsty,phi,it,errmax)
